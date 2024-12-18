@@ -1,0 +1,42 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 1;
+}
+
+.logo{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.816);
+    padding: 10px 20px;
+    border-radius: 13px;
+    z-index: 10;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+/* .info{
+    position: fixed;
+    background-color: #131313;
+    width: 20vw;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 10;
+} */

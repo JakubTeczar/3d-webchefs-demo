@@ -1,0 +1,456 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.4.50",
+        "version" : "2.0"
+    },
+    "extensionsUsed" : [
+        "KHR_materials_transmission",
+        "KHR_materials_ior"
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "glass",
+            "translation" : [
+                -0.2884652018547058,
+                7.361172676086426,
+                4.718974590301514
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "glass02",
+            "translation" : [
+                -0.2884654700756073,
+                5.699350357055664,
+                6.179260730743408
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "watch",
+            "translation" : [
+                -0.0008731335401535034,
+                6.506521224975586,
+                -0.27555161714553833
+            ]
+        },
+        {
+            "children" : [
+                0,
+                1,
+                2
+            ],
+            "name" : "watch_group"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "extensions" : {
+                "KHR_materials_transmission" : {
+                    "transmissionFactor" : 1,
+                    "transmissionTexture" : {
+                        "index" : 0
+                    }
+                },
+                "KHR_materials_ior" : {
+                    "ior" : 1
+                }
+            },
+            "name" : "glass_mat.001",
+            "normalTexture" : {
+                "index" : 1
+            },
+            "occlusionTexture" : {
+                "index" : 2
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 3
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "extensions" : {
+                "KHR_materials_transmission" : {
+                    "transmissionFactor" : 1,
+                    "transmissionTexture" : {
+                        "index" : 4
+                    }
+                },
+                "KHR_materials_ior" : {
+                    "ior" : 1.600000023841858
+                }
+            },
+            "name" : "glass_mat_02.001",
+            "normalTexture" : {
+                "index" : 5
+            },
+            "occlusionTexture" : {
+                "index" : 6
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 7
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 6
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "watch_mat.001",
+            "normalTexture" : {
+                "index" : 8
+            },
+            "occlusionTexture" : {
+                "index" : 9
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 10
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 9
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Mesh",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Mesh.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "TEXCOORD_0" : 9,
+                        "NORMAL" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
+        },
+        {
+            "sampler" : 0,
+            "source" : 6
+        },
+        {
+            "sampler" : 0,
+            "source" : 7
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "glass_transmission",
+            "uri" : "glass_transmission.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Glass_Normal",
+            "uri" : "Glass_Normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "glass_ao-glass_roughness-glass_metallic",
+            "uri" : "glass_ao-glass_roughness-glass_metallic.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "glass_mat_basecolor",
+            "uri" : "glass_mat_basecolor.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "glass_mat_02_basecolor",
+            "uri" : "glass_mat_02_basecolor.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "ulysse_watch_normal",
+            "uri" : "ulysse_watch_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "ulysse_watch_ao-ulysse_watch_roughness-ulysse_watch_metallic",
+            "uri" : "ulysse_watch_ao-ulysse_watch_roughness-ulysse_watch_metallic.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "ulysse_watch_basecolor",
+            "uri" : "ulysse_watch_basecolor.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 3082,
+            "max" : [
+                3.5416200160980225,
+                3.687720537185669,
+                1.7476437091827393
+            ],
+            "min" : [
+                -3.5416200160980225,
+                -3.2990708351135254,
+                -1.5136185884475708
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 3082,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 3082,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 15360,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 778,
+            "max" : [
+                0.4065188467502594,
+                0.4024653434753418,
+                0.07786285877227783
+            ],
+            "min" : [
+                -0.4065188467502594,
+                -0.4024648666381836,
+                -0.07786262035369873
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 778,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 778,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 3072,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 75163,
+            "max" : [
+                4.146470069885254,
+                6.8348388671875,
+                6.847603797912598
+            ],
+            "min" : [
+                -4.146470069885254,
+                -6.507194519042969,
+                -6.294200897216797
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 75163,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 75163,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5125,
+            "count" : 309453,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 36984,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24656,
+            "byteOffset" : 36984,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36984,
+            "byteOffset" : 61640,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 30720,
+            "byteOffset" : 98624,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9336,
+            "byteOffset" : 129344,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6224,
+            "byteOffset" : 138680,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9336,
+            "byteOffset" : 144904,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6144,
+            "byteOffset" : 154240,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 901956,
+            "byteOffset" : 160384,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 601304,
+            "byteOffset" : 1062340,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 901956,
+            "byteOffset" : 1663644,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1237812,
+            "byteOffset" : 2565600,
+            "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 3803412,
+            "uri" : "Ulysse_Nardin_Watch.bin"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Build outputs
+/dist
+/build
+
+# Testing
+/coverage
+
+# Environment files
+.env
+.env.local
