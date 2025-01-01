@@ -13,3 +13,4 @@
 # Environment files
 .env
 .env.local
+.vercel

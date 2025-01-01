@@ -14,6 +14,7 @@ const gltfLoader = new GLTFLoader()
 const rgbeLoader = new RGBELoader()
 const textureLoader = new THREE.TextureLoader()
 const gui = new GUI
+gui.hide()
 const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 let lableAnimation = {
@@ -34,8 +35,8 @@ const updateAllMaterials = () =>
             child.material.opacity = .4; // Required for transmission
             // child.material.metalness = 0;
             // child.material.roughness = 0; // Make it smooth
-            child.material.ior = 1.5; // Glass IOR
-            // child.material.thickness = 0.5; // Glass thickness
+            child.material.ior = 1; // Glass IOR
+            // child.material.thickness = 0.1; // Glass thickness
             child.material.transparent = true;
             child.material.needsUpdate = true;
         }
@@ -60,13 +61,11 @@ gui
     .step(0.001)
 
 // HDR (RGBE) equirectangular
+
 rgbeLoader.load('/environmentMaps/studio_small_09_2k.hdr', (environmentMap) =>
 {
     environmentMap.mapping = THREE.EquirectangularReflectionMapping
-
-
-
-    scene.background = new THREE.Color(0xeeeeee)
+    scene.background = new THREE.TextureLoader().load('backgorund.png')
     scene.environment = environmentMap
 })
 
@@ -104,15 +103,47 @@ directionalLight.target.updateWorldMatrix()
 /**
  * Models
  */
-// Helmet
+
+const brownTexture = new THREE.TextureLoader().load('/models/watch/ulysse_watch_basecolor_2.png'); 
+const blueTexture = new THREE.TextureLoader().load('/models/watch/ulysse_watch_basecolor.png'); 
+
+blueTexture.flipY = false
+blueTexture.colorSpace = THREE.SRGBColorSpace; 
+brownTexture.flipY = false
+brownTexture.colorSpace = THREE.SRGBColorSpace; 
+
+
 gltfLoader.load(
     '/models/watch/Ulysse_Nardin_Watch.gltf',
     (gltf) =>
     {
+        let watchMaterials;
+        gltf.scene.traverse((child) => {
+            if (child.name == 'watch'){
+                watchMaterials = child;
+            }
+            console.log(child)
+        });
+        if (watchMaterials) {
+            watchMaterials.material.map = blueTexture;
+        }
+        console.log(watchMaterials.material.map)
+
         gltf.scene.scale.set(.5, .5, .5)
         scene.add(gltf.scene)
+        
+        const blueButton = document.querySelector('#blue-watch')
+        const brownButton = document.querySelector('#brown-watch')
 
-        updateAllMaterials()
+        if (blueButton && brownButton) {
+            blueButton.addEventListener('click',()=>{
+                watchMaterials.material.map = blueTexture;
+            })
+            brownButton.addEventListener('click',()=>{
+                watchMaterials.material.map = brownTexture; 
+            })
+        }
+        updateAllMaterials();
     }
 )
 
@@ -164,7 +195,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(4, 5, 4)
+camera.position.set(4.12, 5, 4.79)
 scene.add(camera)
 
 // Controls
@@ -327,14 +358,14 @@ const tick = () =>
         
         const square = label.children.find((child) => child.isMesh);
         if (square) {
-            console.log(camera.position.x.toFixed(2), label.cameraPosition.x)
+            // console.log(camera.position.x.toFixed(2), label.cameraPosition.x)
           if(
             lableAnimation.active &&
             camera.position.x.toFixed(2) == label.cameraPosition.x &&
             camera.position.y.toFixed(2) == label.cameraPosition.y &&
             camera.position.z.toFixed(2) == label.cameraPosition.z 
           ){
-            square.visible = true
+            // square.visible = true
             label.visible = true
 
           }else{
@@ -368,3 +399,5 @@ const tick = () =>
 }
 
 tick()
+
+
