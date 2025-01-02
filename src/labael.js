@@ -145,7 +145,9 @@ export const InitLabels = [
                 y: -0.1,
                 z: -0.24
             }
-        }
+        },
+        description: "The watch case is made from gold-plated stainless steel, measuring approximately 43 mm in diameter. It has a distinctive knurled bezel with 120 precision-cut grooves, enhancing both its elegant look and exceptional durability against mechanical damage.",
+        title: "Case"
     },
     {
         x: 0.6497142614848816,
@@ -165,16 +167,18 @@ export const InitLabels = [
                 y: .14,
                 z: 0
             }
-        }
+        },
+        description: "The strap is made of high-quality navy-blue rubber with a textured surface for improved ventilation. It features a fold-over butterfly clasp made of stainless steel with quick length adjustment, ensuring comfort and secure usage, including a safety lock.",
+        title: "Strap"
     },
     {
         x: 1.2652953426787708,
         y: 3.807800992397582,
         z: 2.932147920550089,
         cameraPosition: {
-            x: 1.17,
-            y: 4.03,
-            z: 4.1
+            x: 2.52,
+            y: 4.04,
+            z: 4.41
         },
         descriptionPositon:{
             x: -4.8,
@@ -185,7 +189,9 @@ export const InitLabels = [
                 y: 0,
                 z: 0
             }
-        }
+        },
+        description: "The sapphire crystal, 2 mm thick, is one of the hardest materials in watchmaking (9 on the Mohs scale). It features a multi-layer anti-reflective coating on both sides, ensuring excellent readability, and is highly scratch-resistant, offering long-lasting protection.",
+        title: "Sapphire Crystal"
     },
     {
         x: -0.44240203938218403,
@@ -205,7 +211,9 @@ export const InitLabels = [
                 y: 0,
                 z: 0
             }
-        }
+        },
+        description: "The dial features a cobalt-blue color with gold-plated Roman numeral indices. It includes two sub-dials: a power reserve indicator at 6 o’clock and a small seconds sub-dial at 12 o’clock. The hands are coated with Super-LumiNova for visibility in the dark.",
+        title: "Dial"
     },
     {
         x: -0.07859311771003163,
@@ -225,7 +233,9 @@ export const InitLabels = [
                 y: 0,
                 z: 0
             }
-        }
+        },
+        description: "The transparent sapphire case back reveals the automatic UN-32 movement, secured by six gold-plated stainless steel screws. The brand name ULYSSE NARDIN' and the serial number are engraved on the edge, while the rotor and movement components are visible.",
+        title: "Case Back"
     }
 ];
 

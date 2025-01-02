@@ -32,6 +32,17 @@ nav{
     font-weight: 500;
     max-width: calc(100vw - 360px)
 }
+@media (width > 1950px) {
+    nav{
+       max-width: 1800px;
+    }
+    .left-box{
+        left: 13% !important;
+    }
+    .description{
+        right: 13% !important;
+    }
+}
 .icons > svg {
     width: 25px;
     height: 25px;
@@ -90,7 +101,16 @@ nav > ul{
     border-radius: 22px;
     color: white;
     opacity: 0;
+}
+
+
+
+.description-fade-in{
     animation: fade-in .5s forwards;
+}
+
+.description-fade-out{
+    animation: fade-out .5s forwards;
 }
 
 h2{

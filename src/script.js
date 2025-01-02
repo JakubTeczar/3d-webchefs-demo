@@ -10,7 +10,20 @@ import { createLabel , InitLabels} from './labael'
 /**
  * Loaders
  */
-const gltfLoader = new GLTFLoader()
+const loadingManager = new THREE.LoadingManager();
+let modeiIsLoaded = false;
+// Wyświetlanie postępu
+loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
+    const percentComplete = (itemsLoaded / itemsTotal) * 100;
+    console.log(`Ładowanie: ${Math.round(percentComplete)}%`);
+    document.querySelector('.progress').style.width = `${Math.round(percentComplete)}%`;
+    if(Math.round(percentComplete) == 100){
+        document.querySelector('.loader-container').remove()
+        modeiIsLoaded = true;
+    }
+};
+
+const gltfLoader = new GLTFLoader(loadingManager)
 const rgbeLoader = new RGBELoader()
 const textureLoader = new THREE.TextureLoader()
 const gui = new GUI
@@ -138,9 +151,13 @@ gltfLoader.load(
         if (blueButton && brownButton) {
             blueButton.addEventListener('click',()=>{
                 watchMaterials.material.map = blueTexture;
+                blueButton.classList.add('selected-option')
+                brownButton.classList.remove('selected-option')
             })
             brownButton.addEventListener('click',()=>{
-                watchMaterials.material.map = brownTexture; 
+                watchMaterials.material.map = brownTexture;
+                brownButton.classList.add('selected-option') 
+                blueButton.classList.remove('selected-option')
             })
         }
         updateAllMaterials();
@@ -195,7 +212,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(4.12, 5, 4.79)
+camera.position.set(4.2, 5.03, 4.88)
 scene.add(camera)
 
 // Controls
@@ -279,7 +296,7 @@ cameraFolder.add(cameraDebug, 'z').listen();
 //add label
 let labels = [];
 InitLabels.forEach((label , index) => {
-    const newLabel = createLabel(index + 1,'tytul','opis ospisdandsa',label.descriptionPositon);
+    const newLabel = createLabel(index + 1,label.title,label.description,label.descriptionPositon);
     newLabel.position.set(label.x, label.y, label.z)
     newLabel.name = ( index + 1).toString()
     newLabel.cameraPosition = label.cameraPosition
@@ -321,11 +338,11 @@ function onMouseClick(event) {
     if (clickedLabel) {
   
         //  clickedLabel = intersects[0].object; // Najbliższa trafiona etykieta
-        console.log(clickedLabel)
-        const square = clickedLabel.children.find((child) => child.isMesh);
-        if(square){
-            square.visible = true
-        } 
+        // console.log(clickedLabel)
+        // const square = clickedLabel.children.find((child) => child.isMesh);
+        // if(square){
+        //     square.visible = true
+        // } 
         
         const targetPosition = new Vector3(clickedLabel.cameraPosition.x,  clickedLabel.cameraPosition.y, clickedLabel.cameraPosition.z);
         const targetLookAt = new Vector3(clickedLabel.position.x, clickedLabel.position.y, clickedLabel.position.z);
@@ -334,6 +351,7 @@ function onMouseClick(event) {
 }
 
 window.addEventListener('click', onMouseClick);
+let savedCameraPosition = [];
 
 const tick = () =>   
 {
@@ -341,12 +359,20 @@ const tick = () =>
     cameraDebug.x = Number(camera.position.x.toFixed(2));
     cameraDebug.y = Number(camera.position.y.toFixed(2));
     cameraDebug.z = Number(camera.position.z.toFixed(2));
+
+    if(camera.position.x !=  4.2 && 
+        camera.position.y != 5.03 &&
+        camera.position != 4.88
+    ){
+        document.querySelector('.helper-box').classList.add('remove-helper');
+        document.querySelector('.move-helper').classList.add('remove-helper');
+    }
     // Update controls
     controls.update()
 
  
     let activeLabel = true;
-    labels.forEach((label)=>{
+    labels.forEach((label, index)=>{
         const distance = camera.position.distanceTo(label.position);
         const scale = distance * 0.05;
         
@@ -367,28 +393,37 @@ const tick = () =>
           ){
             // square.visible = true
             label.visible = true
+            document.querySelector('.description h2').textContent = InitLabels[index].title;
+            document.querySelector('.description div').textContent = InitLabels[index].description;
+            document.querySelector('.description').classList.add('description-fade-in');
+            document.querySelector('.description').classList.remove('description-fade-out');
+            savedCameraPosition.push(label.cameraPosition.x,label.cameraPosition.y,label.cameraPosition.z);
 
+            activeLabel = false
           }else{
             square.visible = false
             label.visible = false
-            // label.visible = true
           }
 
-          if(
-            camera.position.x.toFixed(2) == label.cameraPosition.x &&
-            camera.position.y.toFixed(2) == label.cameraPosition.y &&
-            camera.position.z.toFixed(2) == label.cameraPosition.z
-            ){
-                activeLabel = false
-            }
-
         }
+
     })
     if(activeLabel){
         labels.forEach((label)=>{
-            label.visible = true
+            if(modeiIsLoaded){
+                label.visible = true
+            }
         })
         lableAnimation.active = false
+    }
+    if(
+        camera.position.x.toFixed(2) != savedCameraPosition[0] &&
+        camera.position.y.toFixed(2) != savedCameraPosition[1] &&
+        camera.position.z.toFixed(2) != savedCameraPosition[2] 
+    ){
+        savedCameraPosition = [];
+        document.querySelector('.description').classList.remove('description-fade-in')
+        document.querySelector('.description').classList.add('description-fade-out')    
     }
     
     // Render
