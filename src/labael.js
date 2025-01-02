@@ -132,9 +132,9 @@ export const InitLabels = [
         y: 4.6081551620034045,
         z: 2.4093459592278412,
         cameraPosition: {
-            x: 4.32,
-            y: 5.82,
-            z: 1.97
+            x: 4.72,
+            y: 6.05,
+            z: 2.16
         },
         descriptionPositon:{
             x: -4.8,
@@ -154,8 +154,8 @@ export const InitLabels = [
         y: 4.855132754519085,
         z: -2.4763185376751817,
         cameraPosition: {
-            x: 6.11,
-            y: 4.21,
+            x: 6.41,
+            y: 4.24,
             z: -0.06
         },
         descriptionPositon:{
@@ -176,9 +176,9 @@ export const InitLabels = [
         y: 3.807800992397582,
         z: 2.932147920550089,
         cameraPosition: {
-            x: 2.52,
-            y: 4.04,
-            z: 4.41
+            x: 4.05,
+            y: 4.25,
+            z: 4.9
         },
         descriptionPositon:{
             x: -4.8,
@@ -198,9 +198,9 @@ export const InitLabels = [
         y: 4.081122732199145,
         z: 2.619998222864781,
         cameraPosition: {
-            x: -0.27,
+            x: -0.29,
             y: 4.63,
-            z: 6.05
+            z: 6.35
         },
         descriptionPositon:{
             x: -4.8,

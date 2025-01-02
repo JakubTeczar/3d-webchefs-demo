@@ -32,9 +32,21 @@ nav{
     font-weight: 500;
     max-width: calc(100vw - 360px)
 }
-@media (width > 1950px) {
+
+@media (width > 2250px) {
     nav{
-       max-width: 1800px;
+        max-width: 79vw !important;
+    }
+    .left-box{
+        left: 10% !important;
+    }
+    .description{
+        right: 10% !important;
+    }
+}
+@media (width > 2750px) {
+    nav{
+       max-width: 74vw !important;
     }
     .left-box{
         left: 13% !important;
