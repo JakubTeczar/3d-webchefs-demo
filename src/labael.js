@@ -146,7 +146,7 @@ export const InitLabels = [
                 z: -0.24
             }
         },
-        description: "The watch case is made from gold-plated stainless steel, measuring approximately 43 mm in diameter. It has a distinctive knurled bezel with 120 precision-cut grooves, enhancing both its elegant look and exceptional durability against mechanical damage.",
+        description: "The watch case is crafted from responsibly sourced, gold-plated stainless steel, measuring approximately 43 mm in diameter. It features a distinctive knurled bezel with 120 precision-cut grooves, combining an elegant design with exceptional durability against mechanical damage. The use of sustainably sourced materials reflects a commitment to ethical craftsmanship and environmental responsibility.",
         title: "Case"
     },
     {
@@ -168,7 +168,7 @@ export const InitLabels = [
                 z: 0
             }
         },
-        description: "The strap is made of high-quality navy-blue rubber with a textured surface for improved ventilation. It features a fold-over butterfly clasp made of stainless steel with quick length adjustment, ensuring comfort and secure usage, including a safety lock.",
+        description: "The strap is crafted from high-quality FKM rubber, derived from sustainably managed sources in Southeast Asia, known for their commitment to responsible harvesting of natural latex. This material is prized for its exceptional durability, flexibility, and resistance to environmental factors such as heat and chemicals. The fold-over butterfly clasp is made from 316L stainless steel, sourced from recycled steel suppliers in Europe, ensuring minimal environmental impact while maintaining superior strength and hypoallergenic properties. These materials reflect a dedication to combining innovative design with sustainable practices.",
         title: "Strap"
     },
     {
@@ -212,7 +212,7 @@ export const InitLabels = [
                 z: 0
             }
         },
-        description: "The dial features a cobalt-blue color with gold-plated Roman numeral indices. It includes two sub-dials: a power reserve indicator at 6 o’clock and a small seconds sub-dial at 12 o’clock. The hands are coated with Super-LumiNova for visibility in the dark.",
+        description: "The dial features a cobalt-blue colour with gold-plated Roman numeral indices. It includes two sub-dials: a power reserve indicator at 6 o’clock and a small seconds sub-dial at 12 o’clock. The hands are coated with Super-LumiNova, a premium phosphorescent material that absorbs light during the day and emits a long-lasting glow in low-light conditions, ensuring excellent readability in the dark.",
         title: "Dial"
     },
     {
@@ -234,7 +234,7 @@ export const InitLabels = [
                 z: 0
             }
         },
-        description: "The transparent sapphire case back reveals the automatic UN-32 movement, secured by six gold-plated stainless steel screws. The brand name ULYSSE NARDIN' and the serial number are engraved on the edge, while the rotor and movement components are visible.",
+        description: "The transparent sapphire case back reveals the precision-engineered automatic UN-32 movement, which incorporates silicon components for enhanced durability and efficiency. The visible rotor is made of 22-karat Fairmined-certified gold, sourced from artisanal and small-scale mines committed to responsible mining practices. This certification ensures the gold is extracted with respect for the environment, fair labor conditions, and community support.",
         title: "Case Back"
     }
 ];
